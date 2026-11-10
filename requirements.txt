@@ -1,0 +1,11 @@
+# Локальное окружение (данные, сервер, бот)
+pandas
+requests
+beautifulsoup4
+fastapi
+uvicorn
+python-telegram-bot
+python-dotenv
+datasets
+transformers
+anthropic

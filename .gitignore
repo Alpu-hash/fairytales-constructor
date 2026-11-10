@@ -1,0 +1,20 @@
+venv/
+.venv/
+__pycache__/
+.env
+data/raw/
+checkpoints/
+*.safetensors
+
+# большие файлы данных не выкладываем (сэмплы и отчёты остаются)
+data/processed/*.jsonl
+data/processed/*.tsv
+data/dataset/train.jsonl
+data/dataset/val.jsonl
+data/dataset/test.jsonl
+*_backup.py
+docs/~$*
+docs/*.pdf
+docs/*.docx
+data/processed/tales_list.csv
+data/processed/tales_list_2.csv
