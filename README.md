@@ -8,7 +8,7 @@
 
 Personalized bedtime fairy tales for children, in Russian. Step by step, the child chooses the hero and the hero's actions, and a language model (ruGPT3 fine-tuned with LoRA) writes the tale chapter by chapter. Channels: a Telegram bot and a web app (a shared FastAPI server).
 
-**Status:** data preparation is complete. Next: model fine-tuning in Google Colab (T4 GPU), the server and the bot.
+**Status:** data preparation and model fine-tuning (ruGPT3 small and medium + LoRA) are done, see [`results/`](results/README.md). Next: better prompt following, the server and the bot.
 
 ### Data
 
@@ -54,7 +54,8 @@ Data samples: `data/dataset/sample.jsonl`, `data/dataset/examples.md`; statistic
 
 ### Structure
 
-- `training/` — data processing scripts (next: training and evaluation)
+- `training/` — data processing scripts
+- `results/` — metrics and figures of the fine-tuning runs
 - `data/` — sources, samples, statistics (large files are in `.gitignore`)
 - `server/`, `bot/`, `notebooks/` — server, Telegram bot, Colab notebooks (in progress)
 
@@ -69,7 +70,7 @@ Data samples: `data/dataset/sample.jsonl`, `data/dataset/examples.md`; statistic
 
 Персональные детские сказки на ночь на русском языке. Ребёнок шаг за шагом выбирает героя и действия, а языковая модель (ruGPT3, дообученная методом LoRA) пишет сказку по главам. Каналы: Telegram-бот и веб-приложение (общий сервер на FastAPI).
 
-**Статус:** подготовка данных завершена, дальше дообучение модели в Google Colab (GPU T4), сервер и бот.
+**Статус:** подготовка данных и дообучение модели (ruGPT3 small и medium + LoRA) завершены, см. [`results/`](results/README.md). Дальше: улучшение следования подсказке, сервер и бот.
 
 ### Данные
 
@@ -115,7 +116,8 @@ python training/make_report_files.py           # 8. таблицы и стати
 
 ### Структура
 
-- `training/` — скрипты обработки данных (дальше: обучение и оценка)
+- `training/` — скрипты обработки данных
+- `results/` — метрики и графики запусков дообучения
 - `data/` — источники, примеры, статистика (большие файлы в `.gitignore`)
 - `server/`, `bot/`, `notebooks/` — сервер, Telegram-бот, ноутбуки для Colab (в работе)
 
