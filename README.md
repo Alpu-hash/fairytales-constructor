@@ -8,7 +8,7 @@
 
 Personalized bedtime fairy tales for children, in Russian. Step by step, the child chooses the hero and the hero's actions, and a language model (ruGPT3 fine-tuned with LoRA) writes the tale chapter by chapter. Channels: a Telegram bot and a web app (a shared FastAPI server).
 
-**Status:** data preparation and model fine-tuning (ruGPT3 small and medium + LoRA) are done, see [`results/`](results/README.md). Next: better prompt following, the server and the bot.
+**Status:** data preparation, model fine-tuning (ruGPT3 small and medium + LoRA) and the stage-5 experiments are done, see [`results/`](results/README.md). The final model is ruGPT3 medium + LoRA v4: hero coverage 48% on original prompts and 60% with the heroes of the chapter (real chapters: 51%). Next: the server and the bot, child name substitution, human evaluation.
 
 ### Data
 
@@ -57,7 +57,8 @@ Data samples: `data/dataset/sample.jsonl`, `data/dataset/examples.md`; statistic
 - `training/` — data processing scripts
 - `results/` — metrics and figures of the fine-tuning runs
 - `data/` — sources, samples, statistics (large files are in `.gitignore`)
-- `server/`, `bot/`, `notebooks/` — server, Telegram bot, Colab notebooks (in progress)
+- `notebooks/` — stage-5 notebooks: `01_final_model.ipynb` (final model), `02_experiments.ipynb` (all experiments), `03_experiment_rank64.ipynb` (LoRA rank 64); adapters are not stored here
+- `server/`, `bot/` — server and Telegram bot (in progress)
 
 ### Rules
 
@@ -70,7 +71,7 @@ Data samples: `data/dataset/sample.jsonl`, `data/dataset/examples.md`; statistic
 
 Персональные детские сказки на ночь на русском языке. Ребёнок шаг за шагом выбирает героя и действия, а языковая модель (ruGPT3, дообученная методом LoRA) пишет сказку по главам. Каналы: Telegram-бот и веб-приложение (общий сервер на FastAPI).
 
-**Статус:** подготовка данных и дообучение модели (ruGPT3 small и medium + LoRA) завершены, см. [`results/`](results/README.md). Дальше: улучшение следования подсказке, сервер и бот.
+**Статус:** подготовка данных, дообучение модели (ruGPT3 small и medium + LoRA) и эксперименты этапа 5 завершены, см. [`results/`](results/README.md). Финальная модель — ruGPT3 medium + LoRA v4: охват героев 48% на исходных подсказках и 60% с героями главы (у настоящих глав 51%). Дальше: сервер и бот, подстановка имени ребёнка, оценка читателями.
 
 ### Данные
 
@@ -119,7 +120,8 @@ python training/make_report_files.py           # 8. таблицы и стати
 - `training/` — скрипты обработки данных
 - `results/` — метрики и графики запусков дообучения
 - `data/` — источники, примеры, статистика (большие файлы в `.gitignore`)
-- `server/`, `bot/`, `notebooks/` — сервер, Telegram-бот, ноутбуки для Colab (в работе)
+- `notebooks/` — ноутбуки этапа 5: `01_final_model.ipynb` (финальная модель), `02_experiments.ipynb` (все эксперименты), `03_experiment_rank64.ipynb` (ранг LoRA 64); адаптеры здесь не хранятся
+- `server/`, `bot/` — сервер и Telegram-бот (в работе)
 
 ### Правила
 
